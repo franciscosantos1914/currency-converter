@@ -29,7 +29,13 @@ document.getElementById("convertButton").addEventListener("click", function (evt
     let conversion = currencyTable[toCurrency.value][fromCurrency.value]
     let result = Number(enteredValue.value) / conversion
     result = Number(result).toFixed(2)
-    document.getElementById("resultText").innerText = `Resultado: ${result} ${toCurrency.value}`
+    
+    if(fromCurrency.value == toCurrency.value){
+        document.getElementById("resultText").innerText = `Resultado: ${enteredValue.value} ${toCurrency.value}`
+    }else{
+        document.getElementById("resultText").innerText = `Resultado: ${result} ${toCurrency.value}`
+
+    }
 })
 
 // keyed Collections
